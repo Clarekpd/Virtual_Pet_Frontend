@@ -156,12 +156,6 @@ export default function PetStatus() {
               </div>
             </div>
           ))}
-          {pet.nickname && (
-            <div className="m-3">
-              <strong style={{ color: theme.text }}>Nickname:</strong>{" "}
-              <span style={{ color: theme.text, fontStyle: "italic" }}>{pet.nickname}</span>
-            </div>
-          )}
         </div>
       </div>
     </div>

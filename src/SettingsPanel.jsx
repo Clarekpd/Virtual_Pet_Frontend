@@ -3,7 +3,7 @@ import { ThemeContext, themes } from "./ThemeContext";
 
 export default function SettingsPanel({ show, onClose }) {
   const [petNamePopup, setPetNamePopup] = useState(false);
-  const [themePopup, setThemePopup] = useState(false);
+  const [themePopup, setThemePopup] = useState(true);
   const { theme, changeTheme } = useContext(ThemeContext);
 
   const handleTheme = () => {
@@ -64,7 +64,7 @@ export default function SettingsPanel({ show, onClose }) {
         <div className="m-3 py-2">
           <button
             onClick={handleTheme}
-            className="btn rounded m-1"
+            className="btn rounded"
             style={{
               backgroundColor: theme.accent,
               color: "#fff",
@@ -72,17 +72,6 @@ export default function SettingsPanel({ show, onClose }) {
             }}
           >
             Change Theme
-          </button>
-          <button
-            onClick={handlePetName}
-            className="btn rounded m-1"
-            style={{
-              backgroundColor: theme.accent,
-              color: "#fff",
-              border: `1px solid ${theme.border}`,
-            }}
-          >
-            Change Pet Name
           </button>
 
           {themePopup && (
@@ -104,12 +93,6 @@ export default function SettingsPanel({ show, onClose }) {
                   </button>
                 ))}
               </div>
-            </div>
-          )}
-
-          {petNamePopup && (
-            <div className="mt-3">
-              <p>Pet name change options go here...</p>
             </div>
           )}
         </div>
