@@ -1,0 +1,202 @@
+{
+  "pets": [
+    {
+      "id": 0,
+      "name": "Cat",
+      "type": "Cat",
+      "img": "pets/cat.svg",
+      "interactionModule": [
+        {
+          "action": "Feed",
+          "status": "energy",
+          "increment": 8,
+          "svgBad": "icons/bad/food_empty.svg"
+        },
+        {
+          "action": "Pet",
+          "status": "happiness",
+          "increment": 10,
+          "svgBad": "icons/bad/upset.svg"
+        },
+        {
+          "action": "Play",
+          "status": "behavior",
+          "increment": 6,
+          "svgBad": "icons/bad/upset.svg"
+        },
+        {
+          "action": "Clean Litter Box",
+          "status": "hygine",
+          "increment": 13,
+          "svgBad": "icons/bad/poop.svg"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Dog",
+      "type": "Dog",
+      "img": "pets/dog.svg",
+      "interactionModule": [
+        {
+          "action": "Feed",
+          "status": "energy",
+          "increment": 6,
+          "svgBad": "icons/bad/food_empty.svg"
+        },
+        {
+          "action": "Pet",
+          "status": "happiness",
+          "increment": 6,
+          "svgBad": "icons/bad/upset.svg"
+        },
+        {
+          "action": "Play",
+          "status": "behavior",
+          "increment": 8,
+          "svgBad": "icons/bad/upset.svg"
+        },
+        {
+          "action": "Take Outside",
+          "status": "hygine",
+          "increment": 8,
+          "svgBad": "icons/bad/poop.svg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Turtle",
+      "type": "Turtle",
+      "img": "pets/turtle.svg",
+      "interactionModule": [
+        {
+          "action": "Feed",
+          "status": "energy",
+          "increment": 12,
+          "svgBad": "icons/bad/upset.svg"
+        },
+        {
+          "action": "Pet",
+          "status": "happiness",
+          "increment": 12,
+          "svgBad": "icons/bad/upset.svg"
+        },
+        {
+          "action": "Play",
+          "status": "behavior",
+          "increment": 8,
+          "svgBad": "icons/bad/upset.svg"
+        },
+        {
+          "action": "Clean Terrarium",
+          "status": "hygine",
+          "increment": 10,
+          "svgBad": "icons/bad/smudge.svg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Squid",
+      "type": "Squid",
+      "img": "pets/squid.svg",
+      "interactionModule": [
+        {
+          "action": "Feed",
+          "status": "energy",
+          "increment": 5,
+          "svgBad": "icons/bad/upset.svg"
+        },
+        {
+          "action": "Pet",
+          "status": "happiness",
+          "increment": 6,
+          "svgBad": "icons/bad/upset.svg"
+        },
+        {
+          "action": "Play",
+          "status": "behavior",
+          "increment": 10,
+          "svgBad": "icons/bad/upset.svg"
+        },
+        {
+          "action": "Clean Terrarium",
+          "status": "hygine",
+          "increment": 5,
+          "svgBad": "icons/bad/smudge.svg"
+        },
+        {
+          "action": "Ink Collection",
+          "status": "safety",
+          "increment": 10,
+          "svgBad": "icons/bad/upset.svg"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Rabbit",
+      "type": "Rabbit",
+      "img": "pets/rabbit.svg",
+      "interactionModule": [
+        {
+          "action": "Feed",
+          "status": "energy",
+          "increment": 12,
+          "svgBad": "icons/bad/food_empty.svg"
+        },
+        {
+          "action": "Pet",
+          "status": "happiness",
+          "increment": 12,
+          "svgBad": "icons/bad/upset.svg"
+        },
+        {
+          "action": "Play",
+          "status": "behavior",
+          "increment": 8,
+          "svgBad": "icons/bad/upset.svg"
+        },
+        {
+          "action": "Clean Cage",
+          "status": "hygine",
+          "increment": 10,
+          "svgBad": "icons/bad/poop.svg"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Gecko",
+      "type": "Gecko",
+      "img": "pets/gecko.svg",
+      "interactionModule": [
+        {
+          "action": "Feed",
+          "status": "energy",
+          "increment": 12,
+          "svgBad": "icons/bad/upset.svg"
+        },
+        {
+          "action": "Pet",
+          "status": "happiness",
+          "increment": 12,
+          "svgBad": "icons/bad/upset.svg"
+        },
+        {
+          "action": "Play",
+          "status": "behavior",
+          "increment": 8,
+          "svgBad": "icons/bad/upset.svg"
+        },
+        {
+          "action": "Clean Terrarium",
+          "status": "hygine",
+          "increment": 10,
+          "svgBad": "icons/bad/smudge.svg"
+        }
+      ]
+    }
+  ]
+}
