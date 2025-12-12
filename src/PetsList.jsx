@@ -115,10 +115,10 @@ export default function PetsList() {
                   />
                   <div className="card-body d-flex flex-column">
                     <h5 className="card-title" style={{ color: theme.text }}>
-                      {pet.name}
+                      {pet.nickname || pet.name}
                     </h5>
                     {pet.nickname && (
-                      <div style={{ fontStyle: "italic", color: theme.text }}>“{pet.nickname}”</div>
+                      <div style={{ fontStyle: "italic", color: theme.text }}>{pet.name}</div>
                     )}
                     <p className="mb-3 mt-2">
                       <strong>Care Information:</strong>{" "}
@@ -135,7 +135,7 @@ export default function PetsList() {
                         border: `1px solid ${theme.border}`,
                       }}
                     >
-                      Care for {pet.name}
+                      Care for {pet.nickname || pet.name}
                     </button>
                   </div>
                 </div>

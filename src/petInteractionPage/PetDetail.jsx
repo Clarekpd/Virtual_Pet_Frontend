@@ -137,7 +137,7 @@ export default function PetDetail() {
             <div style={{ width: "300px", color: theme.text }}>
               <h3 style={{ textAlign: "center", color: theme.text }}>Pet Information</h3>
               <p>
-                <strong>Name:</strong> {pet.name || "Unknown"}
+                <strong>Name:</strong> {pet.nickname || pet.name || "Unknown"}
               </p>
               <p>
                 <strong>Species:</strong> {pet.type || "Unknown"}
