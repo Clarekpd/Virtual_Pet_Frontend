@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/Clarekpd/Virtual_Pet_Frontend",
+  "homepage": "https://clarekpd.github.io/Virtual_Pet_Frontend/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
