@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import { ThemeContext } from "./ThemeContext";
+import { API_BASE_URL } from "./config";
 
 export default function ChangePassword() {
     const [oldPassword, setOldPassword] = useState("");
@@ -36,7 +37,7 @@ export default function ChangePassword() {
         setLoading(true);
         try {
             const token = localStorage.getItem("token");
-            const res = await fetch("http://localhost:8081/user/password", {
+            const res = await fetch(`${API_BASE_URL}user/password`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",

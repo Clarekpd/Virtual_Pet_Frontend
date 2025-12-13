@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { ThemeContext } from "../ThemeContext";
+import { API_BASE_URL } from "../config";
 
 export default function PetStatus() {
   const { name } = useParams();
@@ -28,7 +29,7 @@ export default function PetStatus() {
       const token = localStorage.getItem("token");
       if (!token) return;
       try {
-        const res = await fetch("http://localhost:8081/user", {
+        const res = await fetch(`${API_BASE_URL}user`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (!res.ok) return;

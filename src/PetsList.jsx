@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import { ThemeContext } from "./ThemeContext";
+import { API_BASE_URL } from "./config";
 
 export default function PetsList() {
   const [pets, setPets] = useState([]);
@@ -13,7 +14,7 @@ export default function PetsList() {
     // fetch pets from backend API (MongoDB)
     async function loadPets() {
       try {
-        const res = await fetch("http://localhost:8081/pets");
+        const res = await fetch(`${API_BASE_URL}pets`);
         const data = await res.json();
         let items = [];
         if (Array.isArray(data)) items = data;
@@ -25,7 +26,7 @@ export default function PetsList() {
         const token = localStorage.getItem("token");
         if (token) {
           try {
-            const ures = await fetch("http://localhost:8081/user", {
+            const ures = await fetch(`${API_BASE_URL}user`, {
               headers: { Authorization: `Bearer ${token}` },
             });
             if (ures.ok) {
@@ -115,10 +116,10 @@ export default function PetsList() {
                   />
                   <div className="card-body d-flex flex-column">
                     <h5 className="card-title" style={{ color: theme.text }}>
-                      {pet.nickname || pet.name}
+                      {pet.name}
                     </h5>
                     {pet.nickname && (
-                      <div style={{ fontStyle: "italic", color: theme.text }}>{pet.name}</div>
+                      <div style={{ fontStyle: "italic", color: theme.text }}>“{pet.nickname}”</div>
                     )}
                     <p className="mb-3 mt-2">
                       <strong>Care Information:</strong>{" "}

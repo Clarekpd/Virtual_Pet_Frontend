@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { ThemeContext } from "../ThemeContext";
+import { API_BASE_URL } from "../config";
 
 export default function PetDetail() {
   const { name } = useParams();
@@ -173,7 +174,7 @@ export default function PetDetail() {
                       const token = localStorage.getItem("token");
                       if (token) {
                         try {
-                          const res = await fetch("http://localhost:8081/user/pet-nickname", {
+                          const res = await fetch(`${API_BASE_URL}user/pet-nickname`, {
                             method: "PUT",
                             headers: {
                               "Content-Type": "application/json",
