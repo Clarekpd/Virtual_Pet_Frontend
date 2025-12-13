@@ -1,20 +1,12 @@
 import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { ThemeContext, themes } from "./ThemeContext";
 
 export default function SettingsPanel({ show, onClose }) {
+  const navigate = useNavigate();
   const [petNamePopup, setPetNamePopup] = useState(false);
   const [themePopup, setThemePopup] = useState(true);
   const { theme, changeTheme } = useContext(ThemeContext);
-
-  const handleTheme = () => {
-    setThemePopup((prev) => !prev);
-    setPetNamePopup(false);
-  };
-
-  const handlePetName = () => {
-    setPetNamePopup((prev) => !prev);
-    setThemePopup(false);
-  };
 
   return (
     <>
@@ -63,7 +55,6 @@ export default function SettingsPanel({ show, onClose }) {
 
         <div className="m-3 py-2">
           <button
-            onClick={handleTheme}
             className="btn rounded"
             style={{
               backgroundColor: theme.accent,
@@ -72,6 +63,18 @@ export default function SettingsPanel({ show, onClose }) {
             }}
           >
             Change Theme
+          </button>
+
+          <button
+            onClick={() => navigate("/password")}
+            className="btn rounded m-2"
+            style={{
+              backgroundColor: theme.accent,
+              color: "#fff",
+              border: `1px solid ${theme.border}`,
+            }}
+          >
+            Change Password
           </button>
 
           {themePopup && (

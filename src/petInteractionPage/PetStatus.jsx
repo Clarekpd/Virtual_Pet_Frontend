@@ -8,6 +8,8 @@ export default function PetStatus() {
   const [pet, setPet] = useState(null);
   const { theme } = useContext(ThemeContext);
 
+  const keys = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'z', 'x', 'c', 'v', 'b', 'n', 'm'];
+
   useEffect(() => {
     const storedPets = JSON.parse(localStorage.getItem("allPets")) || [];
     const found = storedPets.find((p) => p.name === name);
@@ -72,6 +74,19 @@ export default function PetStatus() {
     return () => timers.forEach(clearInterval);
   }, [pet?.name]);
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!pet) return;
+      const keyIndex = keys.indexOf(e.key.toLowerCase());
+      if (keyIndex >= 0 && keyIndex < pet.interactionModule.length) {
+        handleAction(pet.interactionModule[keyIndex]);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [pet]);
+
   const handleAction = (interaction) => {
     setPet((prevPet) => {
       if (!prevPet) return prevPet;
@@ -119,7 +134,9 @@ export default function PetStatus() {
             color: theme.text,
           }}
         >
-          {pet.interactionModule.map((interaction, idx) => (
+          {pet.interactionModule.map((interaction, idx) => {
+            const key = keys[idx] || '';
+            return (
             <div key={idx} className="d-flex align-items-center gap-4 mb-3">
               {/* Interaction button */}
               <button
@@ -137,7 +154,7 @@ export default function PetStatus() {
 
               {/* Interaction label */}
               <p className="m-0" style={{ width: "10%", color: theme.text }}>
-                {interaction.status}:
+                {interaction.status}{key ? ` [${key}]` : ''}:
               </p>
 
               {/* Progress bar */}
@@ -155,7 +172,8 @@ export default function PetStatus() {
                 />
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

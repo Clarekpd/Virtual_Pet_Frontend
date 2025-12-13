@@ -39,7 +39,7 @@ export const themes = {
   forest: {
     name: "Forest",
     background: "#1b3d2f",
-    text: "#e9f5ec",
+    text: "#789680ff",
     accent: "#2ecc71",
     border: "#27ae60",
   },

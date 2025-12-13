@@ -34,7 +34,7 @@ export default function About() {
             <footer>
                 <div class="d-flex justify-content-between m-3">
                     <h3>CS3870: Secure Web Developement, Fall 2025</h3>
-                    <h3 class="d-flex justify-content-end">10/26/2025</h3>
+                    <h3 class="d-flex justify-content-end">12/12/2025</h3>
                 </div>
             </footer>
         </>
