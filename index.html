@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Virtual Pet</title>
     <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // https://github.com/rafgraph/spa-github-pages
       (function(l) {
         if (l.search[1] === '/' ) {
           var decoded = l.search.slice(1).split('&').map(function(s) {
@@ -14,6 +16,15 @@
           window.history.replaceState(null, null,
               l.pathname.slice(0, -1) + decoded + l.hash
           );
+        }
+        // Handle direct access to base path
+        else if (l.pathname === '/Virtual_Pet_Frontend/' || l.pathname === '/Virtual_Pet_Frontend') {
+          window.history.replaceState(null, null, '/' + l.search + l.hash);
+        }
+        // Handle direct access to subpaths with base
+        else if (l.pathname.startsWith('/Virtual_Pet_Frontend/')) {
+          var path = l.pathname.replace('/Virtual_Pet_Frontend', '');
+          window.history.replaceState(null, null, path + l.search + l.hash);
         }
       }(window.location))
     </script>
